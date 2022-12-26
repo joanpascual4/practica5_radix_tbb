@@ -85,10 +85,6 @@ void doMAPFilter(vector<int> &bolMatch, vector<int> &ixMatch, vector<int> &x, ve
             for (auto i = r.begin(); i < r.end(); i++) {
                 if (bolMatch[i]){
                     out[ixMatch[i]-1] = x[i];    
-                }else{ 
-                    int last_pos = ixMatch[ixMatch.size() - 1];
-                    int count = i - ixMatch[i];
-                    out[last_pos + count] = x[i];    
                 }
             }
         }
@@ -96,7 +92,7 @@ void doMAPFilter(vector<int> &bolMatch, vector<int> &ixMatch, vector<int> &x, ve
 }
 
 int main(){
-    // Vector de enteros a ordenar (el tamaño no puede ser mayor a 6)
+    // Vector de enteros a ordenar
     static vector<int> x{7, 0, 2, 3, 2, 1};
 
     // Valor máximo del vector
